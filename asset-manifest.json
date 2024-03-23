@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/excuses-app/static/css/main.a1a5ba2a.css",
+    "main.js": "/excuses-app/static/js/main.fa654896.js",
+    "static/media/dog-excuse.jpg": "/excuses-app/static/media/dog-excuse.5ef22a3b43d862adefeb.jpg",
+    "index.html": "/excuses-app/index.html",
+    "main.a1a5ba2a.css.map": "/excuses-app/static/css/main.a1a5ba2a.css.map",
+    "main.fa654896.js.map": "/excuses-app/static/js/main.fa654896.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1a5ba2a.css",
+    "static/js/main.fa654896.js"
+  ]
+}
