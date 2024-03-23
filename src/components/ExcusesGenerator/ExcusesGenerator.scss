@@ -1,0 +1,106 @@
+// Styles for the ExcusesGenerator component
+
+.excuse-generator {
+    text-align: center;
+    margin-top: 50px; // Add margin to center the component vertically
+  
+    @media screen and (max-width: 320px) {
+      margin-top: 20px; // Adjust margin for smaller screens
+    }
+  }
+
+  .title {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .excuse-generator__select {
+    margin-bottom: 10px; // Add space below the select dropdowns
+    padding: 8px 16px; // Add padding to the select dropdowns
+    border: 1px solid #ccc; // Add border to the select dropdowns
+    border-radius: 5px; // Add border radius to the select dropdowns
+  
+    @media screen and (max-width: 320px) {
+      width: 100%; // Make select dropdowns full width on smaller screens
+    }
+  }
+  
+  .excuse-generator__buttons {
+    margin-bottom: 20px; // Add space below the buttons
+  
+    @media screen and (max-width: 320px) {
+      display: flex; // Align buttons horizontally on smaller screens
+      flex-direction: column; // Stack buttons vertically on smaller screens
+    }
+  }
+  
+  .excuse-generator__button {
+    background-color: blue; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px; // Add spacing between the buttons
+    transition: background-color 0.3s ease; // Smooth transition on hover
+  
+    @media screen and (max-width: 320px) {
+      margin-bottom: 10px; // Add space between buttons on smaller screens
+      width: 100%; // Make buttons full width on smaller screens
+    }
+  
+    &:last-child {
+      margin-right: 0; // Remove margin from the last button
+    }
+    
+    &:hover {
+      background-color: navy; // Darker green on hover
+    }
+  }
+  
+  .excuse-generator__current-excuse {
+    margin-top: 20px; // Add space above the displayed excuse
+    color: #333; // Darken the text color
+  
+    @media screen and (max-width: 320px) {
+      font-size: 14px; // Decrease font size for smaller screens
+    }
+  }
+  
+  .excuse-generator__form {
+    margin-top: 50px; // Add more space between the excuse display and the form
+  
+    @media screen and (max-width: 320px) {
+      margin-top: 30px; // Adjust margin for smaller screens
+    }
+  }
+  
+  .excuse-generator__input {
+    margin-right: 10px; // Add spacing between the input field and the button
+    padding: 10px; // Add padding to the input field
+  
+    @media screen and (max-width: 320px) {
+      width: calc(100% - 25px); // Make input field full width on smaller screens
+    }
+  }
+
+  .dog-excuse {
+    height: 10rem;
+    width: auto;
+    border-radius: .25rem;
+  }
+  
+  .excuse-generator__button[type="submit"] {
+    margin-top: .5rem;
+    background-color: rgb(240, 74, 102); 
+    transition: background-color 0.3s ease; // Smooth transition on hover
+  
+    &:hover {
+      background-color: pink; // Darker red on hover
+      color: black;
+    }
+  }
+  
