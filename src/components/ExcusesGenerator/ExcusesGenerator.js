@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
-import initialExcuses from '../ExcusesData/ExcusesData'; // Ensure this import matches your data structure
-import './ExcusesGenerator.scss'; // Import the SCSS file for styling
+import React, { useState, useEffect } from 'react';
+import initialExcuses from '../ExcusesData/ExcusesData';
+import './ExcusesGenerator.scss';
 import DogExcuse from "../../assets/images/dog-excuse.jpg";
 
 function ExcusesGenerator() {
-  const [excuses, setExcuses] = useState(initialExcuses);
+  const [excuses, setExcuses] = useState(() => {
+    const storedExcuses = localStorage.getItem('excuses');
+    return storedExcuses ? JSON.parse(storedExcuses) : initialExcuses;
+  });
   const [category, setCategory] = useState('');
   const [subcategory, setSubcategory] = useState('');
   const [currentExcuse, setCurrentExcuse] = useState('');
-  const [newExcuse, setNewExcuse] = useState(''); // For input of new excuse
-  const [viewMode, setViewMode] = useState('random'); // 'random' or 'choose'
+  const [newExcuse, setNewExcuse] = useState('');
+  const [viewMode, setViewMode] = useState('random');
 
   const categories = Object.keys(excuses);
   const subcategories = category ? Object.keys(excuses[category]) : [];
+
+  useEffect(() => {
+    localStorage.setItem('excuses', JSON.stringify(excuses));
+  }, [excuses]);
 
   const generateExcuse = () => {
     if (category && subcategory) {
@@ -23,14 +30,12 @@ function ExcusesGenerator() {
 
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
-    // Reset subcategory and currentExcuse when changing category
     setSubcategory('');
     setCurrentExcuse('');
   };
   
   const handleSubcategoryChange = (e) => {
     setSubcategory(e.target.value);
-    // Reset currentExcuse when changing subcategory
     setCurrentExcuse('');
   };
 
@@ -43,8 +48,23 @@ function ExcusesGenerator() {
       }
       updatedExcuses[category][subcategory].push(newExcuse);
       setExcuses(updatedExcuses);
-      setNewExcuse(''); // Reset the input field
+      setNewExcuse('');
     }
+  };
+
+  const deleteExcuse = (excuseToDelete) => {
+    const updatedExcuses = { ...excuses };
+    const categoryKeys = Object.keys(updatedExcuses);
+    for (const catKey of categoryKeys) {
+      const subcategoryKeys = Object.keys(updatedExcuses[catKey]);
+      for (const subKey of subcategoryKeys) {
+        // Check if the excuseToDelete is not included in the initialExcuses
+        if (!initialExcuses[catKey][subKey].includes(excuseToDelete)) {
+          updatedExcuses[catKey][subKey] = updatedExcuses[catKey][subKey].filter(excuse => excuse !== excuseToDelete);
+        }
+      }
+    }
+    setExcuses(updatedExcuses);
   };
 
   return (
@@ -67,17 +87,19 @@ function ExcusesGenerator() {
       </div>
 
       {viewMode === 'choose' && category && subcategory && (
-        <select className="excuse-generator__select" onChange={(e) => setCurrentExcuse(e.target.value)} value={currentExcuse}>
-          <option value="">--Please choose an excuse--</option>
-          {excuses[category][subcategory].map((excuse, index) => (
-            <option key={index} value={excuse}>{excuse}</option>
-          ))}
-        </select>
+        <div>
+          <select className="excuse-generator__select" onChange={(e) => setCurrentExcuse(e.target.value)} value={currentExcuse}>
+            <option value="">--Please choose an excuse--</option>
+            {excuses[category][subcategory].map((excuse, index) => (
+              <option key={index} value={excuse}>{excuse}</option>
+            ))}
+          </select>
+          <button className="excuse-generator__button delete" onClick={() => deleteExcuse(currentExcuse)}>Delete Excuse</button>
+        </div>
       )}
 
       {currentExcuse && <p className="excuse-generator__current-excuse">{currentExcuse}</p>}
 
-      {/* Form to add a new excuse */}
       <form className="excuse-generator__form" onSubmit={addExcuse}>
         <input
           className="excuse-generator__input"

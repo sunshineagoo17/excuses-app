@@ -1,11 +1,9 @@
-// Styles for the ExcusesGenerator component
-
 .excuse-generator {
     text-align: center;
-    margin-top: 50px; // Add margin to center the component vertically
+    margin-top: 50px; 
   
     @media screen and (max-width: 320px) {
-      margin-top: 20px; // Adjust margin for smaller screens
+      margin-top: 20px;
     }
   }
 
@@ -14,22 +12,22 @@
   }
   
   .excuse-generator__select {
-    margin-bottom: 10px; // Add space below the select dropdowns
-    padding: 8px 16px; // Add padding to the select dropdowns
-    border: 1px solid #ccc; // Add border to the select dropdowns
-    border-radius: 5px; // Add border radius to the select dropdowns
+    margin-bottom: 10px; 
+    padding: 8px 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
   
     @media screen and (max-width: 320px) {
-      width: 100%; // Make select dropdowns full width on smaller screens
+      width: 100%; 
     }
   }
   
   .excuse-generator__buttons {
-    margin-bottom: 20px; // Add space below the buttons
+    margin-bottom: 20px; 
   
     @media screen and (max-width: 320px) {
-      display: flex; // Align buttons horizontally on smaller screens
-      flex-direction: column; // Stack buttons vertically on smaller screens
+      display: flex; 
+      flex-direction: column; 
     }
   }
   
@@ -44,46 +42,46 @@
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-right: 10px; // Add spacing between the buttons
-    transition: background-color 0.3s ease; // Smooth transition on hover
+    margin-right: 10px; 
+    transition: background-color 0.3s ease; 
   
     @media screen and (max-width: 320px) {
-      margin-bottom: 10px; // Add space between buttons on smaller screens
-      width: 100%; // Make buttons full width on smaller screens
+      margin-bottom: 10px; 
+      width: 100%;
     }
   
     &:last-child {
-      margin-right: 0; // Remove margin from the last button
+      margin-right: 0; 
     }
     
     &:hover {
-      background-color: navy; // Darker green on hover
+      background-color: navy; 
     }
   }
   
   .excuse-generator__current-excuse {
-    margin-top: 20px; // Add space above the displayed excuse
-    color: #333; // Darken the text color
+    margin-top: 20px; 
+    color: #333; 
   
     @media screen and (max-width: 320px) {
-      font-size: 14px; // Decrease font size for smaller screens
+      font-size: 14px; 
     }
   }
   
   .excuse-generator__form {
-    margin-top: 50px; // Add more space between the excuse display and the form
+    margin-top: 50px; 
   
     @media screen and (max-width: 320px) {
-      margin-top: 30px; // Adjust margin for smaller screens
+      margin-top: 30px; 
     }
   }
   
   .excuse-generator__input {
-    margin-right: 10px; // Add spacing between the input field and the button
-    padding: 10px; // Add padding to the input field
+    margin-right: 10px; 
+    padding: 10px; 
   
     @media screen and (max-width: 320px) {
-      width: calc(100% - 25px); // Make input field full width on smaller screens
+      width: calc(100% - 25px); 
     }
   }
 
@@ -95,12 +93,22 @@
   
   .excuse-generator__button[type="submit"] {
     margin-top: .5rem;
-    background-color: rgb(240, 74, 102); 
-    transition: background-color 0.3s ease; // Smooth transition on hover
+    background-color: rgb(3, 231, 37); 
+    transition: background-color 0.3s ease; 
+    color: black;
   
     &:hover {
-      background-color: pink; // Darker red on hover
+      background-color: rgb(43, 155, 60); 
       color: black;
     }
   }
   
+  .excuse-generator__button.delete {
+    background-color: rgb(240, 74, 102); 
+    transition: background-color 0.3s ease; 
+
+    &:hover {
+      background-color: pink; 
+      color: black;
+    }
+  }
