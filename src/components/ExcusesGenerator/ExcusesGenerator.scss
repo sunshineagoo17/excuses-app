@@ -4,6 +4,10 @@ $accent-color: #e74c3c;
 $border-color: #ccc; 
 $font-color: #333; 
 
+body{
+  width: 100%;
+}
+
 .excuse-generator {
   text-align: center;
   margin-top: 3.125rem;
@@ -132,12 +136,16 @@ $font-color: #333;
   border-radius: 0.313rem;
   width: calc(50% - 0.625rem); 
   
-  @media screen and (max-width: 48rem) { 
-    width: calc(100% - 1.4rem); 
+  @media screen and (max-width: 1280px) { 
+    width: calc(70% - 3.4rem); 
+    margin-right: .75rem;
+    margin-bottom: 0.625rem; 
   }
 
-  @media screen and (max-width: 20rem) { 
-    width: 100vw; 
+  @media screen and (max-width: 768px) { 
+    width: 100%; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
   }
 }
 
