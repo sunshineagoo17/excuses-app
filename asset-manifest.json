@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/excuses-app/static/css/main.a957b355.css",
-    "main.js": "/excuses-app/static/js/main.1372591f.js",
+    "main.css": "/excuses-app/static/css/main.c1c479be.css",
+    "main.js": "/excuses-app/static/js/main.50e3c1a6.js",
     "static/media/dog-excuse.jpg": "/excuses-app/static/media/dog-excuse.5ef22a3b43d862adefeb.jpg",
     "index.html": "/excuses-app/index.html",
-    "main.a957b355.css.map": "/excuses-app/static/css/main.a957b355.css.map",
-    "main.1372591f.js.map": "/excuses-app/static/js/main.1372591f.js.map"
+    "main.c1c479be.css.map": "/excuses-app/static/css/main.c1c479be.css.map",
+    "main.50e3c1a6.js.map": "/excuses-app/static/js/main.50e3c1a6.js.map"
   },
   "entrypoints": [
-    "static/css/main.a957b355.css",
-    "static/js/main.1372591f.js"
+    "static/css/main.c1c479be.css",
+    "static/js/main.50e3c1a6.js"
   ]
 }
