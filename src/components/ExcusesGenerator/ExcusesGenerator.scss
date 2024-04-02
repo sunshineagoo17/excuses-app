@@ -1,114 +1,169 @@
+$primary-color: #3498db; 
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c; 
+$border-color: #ccc; 
+$font-color: #333; 
+
 .excuse-generator {
-    text-align: center;
-    margin-top: 3.125rem; 
+  text-align: center;
+  margin-top: 3.125rem;
   
-    @media screen and (max-width: 320px) {
-      margin-top: 1.25rem;
-    }
+  @media screen and (max-width: 48rem) { 
+    margin-top: 1.25rem;
+  }
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.excuse-generator__select-category,
+.excuse-generator__select-subcategory {
+  margin: 0 auto; 
+  margin-bottom: 0.625rem; 
+  padding: 0.5rem 1rem; 
+  border: 0.063rem solid $border-color; 
+  border-radius: 0.313rem; 
+  background-color: #f5f5f5; 
+
+  @media screen and (max-width: 768px) { 
+    width: 100%; 
+  }
+}
+
+.excuse-generator__select-category {
+  @media screen and (max-width: 320px) { 
+    margin-right: 0;
   }
 
-  .title {
-    font-family: Arial, Helvetica, sans-serif;
+  @media screen and (min-width: 768px) { 
+    margin-right: .25rem;
+  }
+
+  @media screen and (min-width: 1280px) { 
+    margin-right: .25rem;
+  }
+}
+
+.excuse-generator__select-subcategory {
+  @media screen and (max-width: 320px) { 
+    margin-left: 0;
+  }
+}
+
+.excuse-generator__select {
+  margin: 0 auto; 
+  margin-bottom: 0.625rem; 
+  padding: 0.5rem 1rem; 
+  border: 0.063rem solid $border-color; 
+  border-radius: 0.313rem; 
+  background-color: #f5f5f5; 
+  
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) { 
+    max-width: 30rem; 
+    margin-right: .5rem;
+  }
+}
+
+.excuse-generator__buttons {
+  margin: 0 auto; 
+  margin-bottom: 1.25rem; 
+  
+  @media screen and (max-width: 48rem) { 
+    display: flex; 
+    flex-direction: column; 
+  }
+}
+
+.excuse-generator__button {
+  background-color: $primary-color; 
+  border: none;
+  color: white;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.313rem;
+  margin-right: 0.625rem; 
+  transition: background-color 0.3s ease; 
+  
+  @media screen and (max-width: 48rem) { 
+    margin-bottom: 0.625rem; 
+    width: 100%;
+  }
+
+  &:last-child {
+    margin-right: 0; 
   }
   
-  .excuse-generator__select {
-    margin-bottom: .625rem; 
-    padding: .5rem 1rem; 
-    border: .063rem solid #ccc; 
-    border-radius: .313rem; 
-  
-    @media screen and (max-width: 320px) {
-      width: 100%; 
-    }
+  &:hover {
+    background-color: darken($primary-color, 10%); 
   }
+}
+
+.excuse-generator__current-excuse {
+  margin-top: 1.25rem; 
+  color: $font-color; 
   
-  .excuse-generator__buttons {
-    margin-bottom: 1.25rem; 
-  
-    @media screen and (max-width: 320px) {
-      display: flex; 
-      flex-direction: column; 
-    }
+  @media screen and (max-width: 48rem) { 
+    font-size: 0.875rem; 
   }
+}
+
+.excuse-generator__form {
+  margin: 0 auto; 
+  margin-top: 3.125rem; 
   
-  .excuse-generator__button {
-    background-color: blue; 
-    border: none;
+  @media screen and (max-width: 48rem) { 
+    margin-top: 1.875rem; 
+  }
+}
+
+.excuse-generator__input {
+  margin-right: .75rem;
+  padding: 0.625rem; 
+  border: 0.063rem solid $border-color; 
+  border-radius: 0.313rem;
+  width: calc(50% - 0.625rem); 
+  
+  @media screen and (max-width: 48rem) { 
+    width: calc(100% - 1.4rem); 
+  }
+
+  @media screen and (max-width: 20rem) { 
+    width: 100vw; 
+  }
+}
+
+.dog-excuse {
+  height: 10rem;
+  width: auto;
+  border-radius: 0.25rem;
+}
+
+.excuse-generator__button[type="submit"] {
+  margin-top: 0.5rem;
+  background-color: $secondary-color; 
+  transition: background-color 0.3s ease; 
+  color: black;
+
+  &:hover {
     color: white;
-    padding: .625rem 1.25rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: .313rem;
-    margin-right: .625rem; 
-    transition: background-color 0.3s ease; 
-  
-    @media screen and (max-width: 320px) {
-      margin-bottom: .625rem; 
-      width: 100%;
-    }
-  
-    &:last-child {
-      margin-right: 0; 
-    }
-    
-    &:hover {
-      background-color: navy; 
-    }
+    background-color: darken($secondary-color, 10%); 
   }
-  
-  .excuse-generator__current-excuse {
-    margin-top: 1.25rem; 
-    color: #333; 
-  
-    @media screen and (max-width: 320px) {
-      font-size: .875rem; 
-    }
-  }
-  
-  .excuse-generator__form {
-    margin-top: 3.125rem; 
-  
-    @media screen and (max-width: 320px) {
-      margin-top: 1.875rem; 
-    }
-  }
-  
-  .excuse-generator__input {
-    margin-right: .625rem; 
-    padding: .625rem; 
-  
-    @media screen and (max-width: 320px) {
-      width: calc(100% - 1.563rem); 
-    }
-  }
+}
 
-  .dog-excuse {
-    height: 10rem;
-    width: auto;
-    border-radius: .25rem;
-  }
-  
-  .excuse-generator__button[type="submit"] {
-    margin-top: .5rem;
-    background-color: rgb(3, 231, 37); 
-    transition: background-color 0.3s ease; 
-    color: black;
-  
-    &:hover {
-      background-color: rgb(43, 155, 60); 
-      color: black;
-    }
-  }
-  
-  .excuse-generator__button.delete {
-    background-color: rgb(240, 74, 102); 
-    transition: background-color 0.3s ease; 
+.excuse-generator__button.delete {
+  background-color: $accent-color; 
+  transition: background-color 0.3s ease; 
 
-    &:hover {
-      background-color: pink; 
-      color: black;
-    }
+  &:hover {
+    background-color: lighten($accent-color, 10%); 
   }
+}

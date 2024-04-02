@@ -71,12 +71,12 @@ function ExcusesGenerator() {
     <div className="excuse-generator">
       <img src={DogExcuse} className="dog-excuse" alt="dog excuse" />
       <h2 className="title">Need an excuse?</h2>
-      <select className="excuse-generator__select" onChange={handleCategoryChange} value={category}>
+      <select className="excuse-generator__select-category" onChange={handleCategoryChange} value={category}>
         <option value="">Select Category</option>
         {categories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
       </select>
 
-      <select className="excuse-generator__select" onChange={handleSubcategoryChange} value={subcategory} disabled={!category}>
+      <select className="excuse-generator__select-subcategory" onChange={handleSubcategoryChange} value={subcategory} disabled={!category}>
         <option value="">Select Subcategory</option>
         {subcategories.map(sub => <option key={sub} value={sub}>{sub}</option>)}
       </select>
